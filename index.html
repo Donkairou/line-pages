@@ -10,14 +10,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f8f8f8;
+            background-color: #f8f1f1; /* 淡粉色背景 */
             font-family: 'Arial', sans-serif;
             margin: 0;
         }
         .container {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             text-align: center;
@@ -28,15 +28,15 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         h1 {
-            color: #333;
-            font-size: 24px;
+            color: #F8A9C4; /* 樱花粉色 */
+            font-size: 28px;
             margin-bottom: 20px;
         }
         .image {
             width: 100%;
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -45,14 +45,14 @@
             padding: 12px 25px;
             font-size: 18px;
             color: white;
-            background-color: #06C755;
+            background-color: #F8A9C4; /* 樱花粉色 */
             text-decoration: none;
             border-radius: 5px;
             transition: 0.3s;
             margin-top: 20px;
         }
         .btn:hover {
-            background-color: #059d43;
+            background-color: #F07899; /* 深一些的粉色 */
         }
         .pagination {
             display: flex;
@@ -61,7 +61,7 @@
         }
         .pagination button {
             padding: 10px 20px;
-            background-color: #06C755;
+            background-color: #F8A9C4; /* 樱花粉色 */
             color: white;
             border: none;
             border-radius: 5px;
@@ -70,7 +70,16 @@
             transition: 0.3s;
         }
         .pagination button:hover {
-            background-color: #059d43;
+            background-color: #F07899; /* 深一些的粉色 */
+        }
+        .explanation {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            background-color: #fff7f7; /* 淡粉色背景 */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -80,9 +89,54 @@
         
         <!-- 图片展示区域 -->
         <img class="image" id="image1" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/A.png" alt="桜会席料理写真">
-        <img class="image" id="image2" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/1(1).png" alt="去年の桜写真1" style="display: none;">
-        <img class="image" id="image3" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/2(1).png" alt="去年の桜写真2" style="display: none;">
         
+        <!-- 显示详细解释的按钮 -->
+        <button class="btn" onclick="showExplanation()">詳しい説明を見る</button>
+        
+        <!-- 详细解释区域 -->
+        <div class="explanation" id="explanation">
+            <h2>■夕食：桜会席</h2>
+            <p>春の食材をメインとした春に人気の会席料理です。</p>
+            <ul>
+                <li>乾　杯：季節の食前酒</li>
+                <li>先付け：猪口 菜の花辛し和え　蓬豆腐</li>
+                <li>しら酢　とびこ</li>
+                <li>鯛桜葉寿司　一寸豆甘露煮　伊達板</li>
+                <li>飯蛸旨煮　合鴨ロース　桜海老寄せ揚げ</li>
+                <li>椀替り：桜鯛のしゃぶしゃぶ</li>
+                <li>造　里：季節の鮮魚三種盛</li>
+                <li>凌　ぎ：蛍烏賊のジュレがけ</li>
+                <li>焼き物：サーモン木の芽味噌焼き</li>
+                <li>蒸し物：桜豚の蒸籠蒸し</li>
+                <li>揚　物：白魚と山菜の天婦羅</li>
+                <li>御　飯：あさりの釜飯</li>
+                <li>香の物：二種類</li>
+                <li>留　椀：桜素麺</li>
+                <li>水　物：桜シャーベット</li>
+            </ul>
+            <p><strong>※仕入れの都合により内容が変わることもございます。</strong></p>
+
+            <h3>■小学生のお子様のお料理</h3>
+            <p>お子様用に特別会席をご準備しています。</p>
+            <ul>
+                <li>前菜 造里 小鍋 鯛の兜煮 茶碗蒸し 御飯 留椀 香の物 デザート</li>
+            </ul>
+            <h3>■お子様ランチの内容一例</h3>
+            <ul>
+                <li>チキンライス ワンプレート（海老フライ・唐揚げ・一口コロッケ・ハンバーグ・ポテトフライ・生野菜サラダ）</li>
+                <li>コーンスープ 茶碗蒸し デザート</li>
+            </ul>
+            <p>◇◆◇お食事についてのご案内◆◇◆</p>
+            <ul>
+                <li>※お子様が大人と同じお料理をご希望の場合は、当館までご連絡下さいませ。</li>
+                <li>※当日の仕入れ状況にあわせ、厳選してご提供いたします。</li>
+                <li>※２階お食事処にてご用意いたします。</li>
+                <li>※朝食は和定食となります。</li>
+                <li>※アレルギーや苦手な食材がございましたら、当館までご連絡下さいませ。</li>
+            </ul>
+                 <p>※料理写真はイメージです。</p>
+        </div>
+
         <a class="btn" href="https://www.489pro.com/asp/489/date.asp?id=28000015&plan=21&room=1&year=2025&month=3&user_num=2&lan=JPN&ty=ser&list=YES&mo=0&meal=-1&m_menu=1&m_date=1&u_n=2&s_n=0&s_r=0&dt=4&s_y=2025&s_m=3&s_d=29&s_nd=1&xyz=0&s_bmin=&s_bmax=&s_sm=&plan_type=-1&men=&women=&nights=&dayon=&first=&early=&long=&payment=0#ypro_cbt">今予約します～</a>
         
         <!-- 分页按钮 -->
@@ -104,8 +158,9 @@
             document.getElementById("image" + imageIndex).style.display = "block";
         }
 
-        // 默认显示第一张图片
-        showImage(1);
-    </script>
-</body>
-</html>
+        function showExplanation() {
+            var explanation = document.getElementById("explanation");
+            explanation.style.display = (explanation.style.display === "none" || explanation.style.display === "") ? "block" : "none";
+        }
+
+        // 默认显示第一
