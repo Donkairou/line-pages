@@ -3,61 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>呑海楼 桜会席料理 限定期間：3/31～4/15 </title>
+    <title>呑海楼 桜会席料理 限定期間：3/31～4/15</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            background-color: #f8f8f8;
+            font-family: 'Arial', sans-serif;
             margin: 0;
         }
         .container {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            overflow-y: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+        .container:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         h1 {
             color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         .image {
             width: 100%;
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 25px;
             font-size: 18px;
             color: white;
             background-color: #06C755;
             text-decoration: none;
             border-radius: 5px;
             transition: 0.3s;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .btn:hover {
+            background-color: #059d43;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 10px 20px;
+            background-color: #06C755;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pagination button:hover {
             background-color: #059d43;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>呑海楼です、ようこそ！</h1>
+        <h1>呑海楼へ、ようこそ！桜会席料理のご紹介です。</h1>
         
-        <img class="image" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/A.png" alt="桜会席料理写真">
+        <!-- 图片展示区域 -->
+        <img class="image" id="image1" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/A.png" alt="桜会席料理写真">
+        <img class="image" id="image2" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/1(1).png" alt="去年の桜写真1" style="display: none;">
+        <img class="image" id="image3" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/2(1).png" alt="去年の桜写真2" style="display: none;">
         
-        <img class="image" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/1(1).png" alt="去年の桜写真1">
+        <a class="btn" href="https://www.489pro.com/asp/489/date.asp?id=28000015&plan=21&room=1&year=2025&month=3&user_num=2&lan=JPN&ty=ser&list=YES&mo=0&meal=-1&m_menu=1&m_date=1&u_n=2&s_n=0&s_r=0&dt=4&s_y=2025&s_m=3&s_d=29&s_nd=1&xyz=0&s_bmin=&s_bmax=&s_sm=&plan_type=-1&men=&women=&nights=&dayon=&first=&early=&long=&payment=0#ypro_cbt">今予約します～</a>
         
-        <img class="image" src="https://raw.githubusercontent.com/Donkairou/line-pages/main/2(1).png" alt="去年の桜写真2">
-        
-        <a class="btn" href="https://www.489pro.com/asp/489/date.asp?id=28000015&plan=21&room=1&year=2025&month=3&user_num=2&lan=JPN&ty=ser&list=YES&mo=0&meal=-1&m_menu=1&m_date=1&u_n=2&s_n=0&s_r=0&dt=4&s_y=2025&s_m=3&s_d=29&s_nd=1&xyz=0&s_bmin=&s_bmax=&s_sm=&plan_type=-1&men=&women=&nights=&dayon=&first=&early=&long=&payment=0#ypro_cbt">次へ</a>
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            <button onclick="showImage(1)">画像 1</button>
+            <button onclick="showImage(2)">画像 2</button>
+            <button onclick="showImage(3)">画像 3</button>
+        </div>
     </div>
+
+    <script>
+        function showImage(imageIndex) {
+            // 隐藏所有图片
+            document.getElementById("image1").style.display = "none";
+            document.getElementById("image2").style.display = "none";
+            document.getElementById("image3").style.display = "none";
+            
+            // 显示选中的图片
+            document.getElementById("image" + imageIndex).style.display = "block";
+        }
+
+        // 默认显示第一张图片
+        showImage(1);
+    </script>
 </body>
 </html>
